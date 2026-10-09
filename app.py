@@ -141,7 +141,7 @@ def make_combined_parameter_figures(
         ax.tick_params(axis="x", rotation=30, labelsize=8)
         ax.tick_params(axis="y", labelsize=8)
         ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m-%d %H:%M"))
-        if len(file_names) <= 12:
+        if len(file_names) <= 3:
             ax.legend(fontsize=7, loc="best", title="Sessions")
         fig.tight_layout()
         figures.append((name, fig))
