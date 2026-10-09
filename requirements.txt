@@ -1,0 +1,8 @@
+streamlit>=1.28
+pandas>=2.0
+matplotlib>=3.7
+numpy>=1.24
+cartopy>=0.22
+pyproj>=3.5
+pyshp>=2.3
+shapely>=2.0
