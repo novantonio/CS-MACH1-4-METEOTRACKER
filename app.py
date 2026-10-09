@@ -99,7 +99,12 @@ def make_combined_parameter_figures(
         return figures
 
     file_names = list(logger_dfs.keys())
-    cmap = plt.cm.get_cmap("tab10", max(len(file_names), 1))
+    n = max(len(file_names), 1)
+    # Matplotlib ≥ 3.7 prefers plt.colormaps; keep fallback for older builds
+    try:
+        cmap = plt.colormaps["tab10"].resampled(n)
+    except Exception:
+        cmap = plt.cm.get_cmap("tab10", n)
     file_color_map = {name: cmap(i) for i, name in enumerate(file_names)}
 
     for col, name, unit, _ in params_list:
